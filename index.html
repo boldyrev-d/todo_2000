@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LEARN JS TODO</title>
+
+    <!-- STYLE -->
+    <!--<link rel="stylesheet" href="./src/libs/bootstrap/bootstrap.min.css">-->
+    <link rel="stylesheet" href="./src/blocks/app/app.css">
+    <link rel="stylesheet" href="./src/blocks/new-todo/new-todo.css">
+    <link rel="stylesheet" href="./src/blocks/todo-list/todo-list.css">
+
+    <!-- CSS BUNDLE -->
+    <!--<link rel="stylesheet" href="./bundle.css">-->
+</head>
+<body>
+
+<div class="app">
+    <h1>TODO LIST</h1>
+    <div class="js-new-todo"></div>
+    <div class="js-todo-list"></div>
+</div>
+
+<script type="text/x-tmpl" id="new-todo">
+    <form class="todo-form">
+        <input type="text" required="required" placeholder="Что вы хотите сделать сегодня?">
+    </form>
+</script>
+
+<script type="text/x-tmpl" id="todo-list">
+    <ul class="todo-list">
+        <%for (let i=0; i<this.items.length; i++) {%>
+            <li class="todo-list__item" data-index="<%i%>">
+                <div class="item" data-action="pick"><%this.items[i].text%></div>
+                <i class="close" data-action="remove"></i>
+            </li>
+        <%}%>
+    </ul>
+</script>
+
+<!-- Application -->
+<script type="text/javascript" src="./build/bundle.js"></script>
+
+</body>
+</html>

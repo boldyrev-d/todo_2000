@@ -1,0 +1,9 @@
+.todo-form input {
+    width: 500px;
+    height: 30px;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid darkslategray;
+    outline: none;
+}
